@@ -1,0 +1,64 @@
+{
+  "layoutComponents": {
+    "header": "../../src/components/header/headerComponent.vue"
+  },
+  "app_layout": {
+    "default_layout": {
+      "nav": 64
+    }
+  },
+  "staticImgs": {},
+  "uiStyleClr": {
+    "font_clr": {
+      "text-default": "#262626",
+      "main": "#fff",
+      "high__light--primary": "#2D70F8",
+      "gary__sub": "#EDEEF0",
+      "gary__light--1": "#8C8C8C",
+      "gary__light--2": "#A5AAB4",
+      "gary__light--3": "#595959",
+      "danger01": "#FD5218",
+      "danger02": "#E01738"
+    },
+    "background_clr": {
+      "primary": "#2D70F8",
+      "light": "#fff",
+      "light-2": "#FAFAFA",
+      "light-3": "#EBEBEB",
+      "light-4": "#EEF4FF",
+      "light-5": "rgba(255,255,255,0.15)",
+      "light-6": "#E6E6E6",
+      "danger-light": "#FFEFF0",
+      "cyan01": "#6897DA",
+      "main_bg": "#EFECF2",
+      "warn_01": "#F0A819"
+    },
+    "border_clr": {
+      "main": "#E6E6E6"
+    }
+  },
+  "uiStyleSize": {
+    "font_size": {
+      "title-small": "14px",
+      "title-medium": "16px",
+      "title-default": "12px",
+      "title-large": "20px"
+    }
+  },
+  "uiStyleLayout": {
+    "layout": {
+      "layout__flex--column": {
+        "display": "flex",
+        "flex-direction": "column"
+      },
+      "layout__flex": {
+        "display": "flex"
+      },
+      "layout__hidden--scrollY": {
+        "overflow": "hidden",
+        "overflow-y": "auto"
+      }
+    },
+    "beauti__bar": {}
+  }
+}

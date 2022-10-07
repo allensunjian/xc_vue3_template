@@ -1,0 +1,345 @@
+<!--
+ * @Author: allensunjian Allen_sun_js@hotmail.com
+ * @Date: 2022-08-15 15:13:46
+ * @LastEditors: allensunjian Allen_sun_js@hotmail.com
+ * @LastEditTime: 2022-10-06 10:57:17
+ * @FilePath: \xc_customer-service\public\index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <style>
+    .only__number .el-input-number__decrease,
+    .only__number .el-input-number__increase {
+      display: none;
+    }
+
+    .no_ready {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #409EFF;
+      font-family: "微软雅黑";
+    }
+
+    .no_ready div {
+      margin: auto;
+      perspective: 500px;
+      transform-style: preserve-3d;
+      font: 10vw Righteous;
+      animation: fade 8s infinite;
+    }
+
+    .no_ready span {
+      position: relative;
+      display: inline-block;
+      min-width: .5em;
+      text-align: center;
+      transform-style: preserve-3d;
+      transform: rotateY(25deg);
+      animation: rotate 8s infinite ease-in;
+      color: #fff;
+    }
+
+    .no_ready span:after,
+    .no_ready span:before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: attr(class);
+      color: #c8c9cc;
+      z-index: -1;
+      animation: shadow 8s infinite;
+    }
+
+    .no_ready span:before {
+      transform: translateZ(-14px);
+    }
+
+    .no_ready span:after {
+      transform: translateZ(-7px);
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+
+      25% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotateY(65deg);
+      }
+
+      50%,
+      100% {
+        color: #c8c9cc;
+        transform: rotateY(5deg);
+      }
+
+      100% {
+        color: #c8c9cc;
+      }
+    }
+
+    @keyframes shadow {
+      from {
+        color: shade(#c8c9cc, 50%);
+      }
+
+      25% {
+        color: #AFA695;
+      }
+
+      50%,
+      100% {
+        color: tint(#867862, 100%);
+      }
+    }
+  </style>
+  <style>
+    #app {
+      --el-menu-item-height: 48px;
+      --el-color-primary: var(--font_clr-high__light--primary);
+      --el-text-color-primary: var(--font_clr-high__light--primary);
+    }
+
+    .el-menu-item .is-active {
+      background: var(--background_clr-light-4);
+    }
+
+    .el-tabs__item {
+      color: var(--font_clr-text-default) !important;
+    }
+
+    .el-tabs__item.is-active {
+      color: var(--font_clr-high__light--primary) !important;
+    }
+
+    .el-table__header-wrapper thead tr th {
+      background: var(--background_clr-light-2) !important;
+      color: var(--font_clr-gary__light--1) !important;
+    }
+
+    .el-dialog__header {
+      background: var(--font_clr-high__light--primary);
+      margin-right: 0 !important;
+    }
+
+    .el-dialog__header .el-dialog__close {
+      color: var(--font_clr-main) !important
+    }
+
+    .el-dialog {
+      --el-dialog-padding-primary: 10px !important;
+    }
+
+    .el-dialog__headerbtn {
+      width: 73px !important;
+      height: 44px !important;
+      font-size: var(--el-message-close-size, 26px) !important;
+    }
+
+    .el-dialog__title {
+      color: var(--font_clr-main) !important
+    }
+
+    .v-enter-active {
+      transition: opacity 1.5s ease;
+    }
+
+    .v-leave-active {
+      /* transition: opacity 0.1s ease; */
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+      opacity: 0;
+      /* transform: translateX(100px); */
+    }
+
+    .el-collapse {
+      --el-collapse-header-height: 40px !important;
+      --el-collapse-header-text-color: var(--font_clr-text-default) !important
+    }
+
+    .el-tree-node.is-current>.el-tree-node__content,
+    .el-tree-node__content:hover {
+      background: var(--font_clr-high__light--primary) !important;
+      color: var(--font_clr-main)
+    }
+
+    @keyframes round {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .round__infi {
+      animation: round 4s infinite;
+    }
+
+
+
+    .Nav__content_third--item {
+      flex: 0 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      padding: 10px;
+      box-sizing: border-box
+    }
+
+    .Nav__content_third {
+      padding-top: 56px;
+      box-sizing: border-box;
+      width: 120px;
+    }
+
+    .sideActive {
+      background: var(--background_clr-light-4);
+      color: var(--font_clr-high__light--primary);
+    }
+
+    .merge__element:nth-child(2n+1) .el-input__wrapper {
+      box-shadow: 0 0 0 1px var(--el-input-border-color, var(--el-border-color)) inset;
+      border-radius: unset;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .merge__element:nth-child(2n) .el-input__wrapper {
+      box-shadow: none;
+      border-top: 1px solid var(--el-border-color);
+      border-bottom: 1px solid var(--el-border-color);
+      border-right: 1px solid var(--el-border-color);
+      border-radius: unset;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+
+    }
+  </style>
+  <style>
+    /* common style */
+    .Form_title {
+      height: 32px;
+      background: var(--background_clr-light-2);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }
+
+    .city__select {
+      width: 100% !important;
+    }
+
+    .city__select .el-input__wrapper {
+      border: none !important;
+      border-radius: none;
+      padding: unset;
+      box-shadow: unset
+    }
+
+    .city__select .border-radius {
+      border-radius: none;
+    }
+
+    .city__select .el-input__wrapper:hover {
+      box-shadow: none;
+    }
+
+    .city__select .el-tag {
+      height: auto !important;
+      background: none !important;
+      color: var(--font_clr-high__light--primary);
+      margin: 0 !important;
+    }
+
+    .single_beyond {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .colorText {
+      color: var(--font_clr-text-default);
+      font-size: 14px;
+      line-height: 22px;
+    }
+  </style>
+  <style>
+    .form__layout_label {
+      display: inline-block;
+      width: 140px;
+      text-align: right;
+      vertical-align: top;
+      position: relative;
+    }
+
+    .is__must::before {
+      content: "*";
+      color: var(--font_clr-danger02)
+    }
+
+    .form__layout_content {
+      display: inline-block;
+      width: 160px;
+      position: relative;
+
+    }
+
+    .form__layout {
+      display: block;
+    }
+
+    .form__layout>.form__layout_item {
+      margin-top: 4px;
+    }
+
+    .form__layout_item {
+      display: block;
+      line-height: 32px;
+    }
+
+    .form__layout_item .form__layout_item {
+      display: inline-block;
+    }
+  </style>
+  <%= htmlWebpackPlugin.options.styleState %>
+
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

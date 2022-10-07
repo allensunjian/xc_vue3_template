@@ -1,0 +1,162 @@
+/*
+  @author: daifuquan
+*/
+/* 页面格式化start */
+@charset "utf-8";
+body, div, dl, dd, h1, h2, h3, h4, h5, h6, p, form, figure, figcaption {
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+@font-face
+{
+  font-family: Rubik;
+  src: url('https://static.bitfty.com/static/fonts/Rubik-Regular.ttf') format('truetype');
+}
+html, body {
+  /*-webkit-user-select: none;*/
+  /* 禁止选中文本 */
+  /*user-select: none;*/
+  -webkit-text-size-adjust: 100%;
+  /* iphone禁用文字大小调整 */
+  -ms-text-size-adjust: 100%;
+  color: var(--font_clr-text-default)
+}
+body {
+  width:100%;
+  // max-width: 1920px;
+  // min-width: 1200px;
+  background: #F9F9F9;
+  margin: 0 auto;
+}
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+  font-weight:normal;
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+}
+body, div, button, h2, p {
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+}
+/* 清除点击虚拟框 */
+a, div, p, span, ul, li, img, input {
+  outline: 0;
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+i {
+  outline: 0;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+input, textarea, select, button {
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+  outline: none;
+}
+input {
+  /* 清除 iphone 中 input 默认样式 */
+  -webkit-appearance: none;
+  font-size: 16px;
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+}
+input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;
+  transition: background-color 5000s ease-in-out 0s; /* 通过延时渲染背景色变相去除背景颜色 */
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+}
+input::-webkit-input-placeholder {
+  color: #c4c4cc;
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+  font-family: '微软雅黑', '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', Arial, Verdana, sans-serif;
+}
+/* 去掉input框里默认自带的×号和图标 */
+input::-ms-clear, input::-ms-reveal{
+  display:none !important;
+}
+
+a img{
+  border:0 none;
+}
+a, img {
+  -webkit-touch-callout: none;
+  /* 禁止长按链接与图片弹出菜单 */
+}
+/* 页面格式化end */
+
+// 变量存储
+// 字体Unicode编码 微软雅黑:\5FAE\8F6F\96C5\9ED1 , 宋体:\5B8B\4F53
+$defaultColor: #1F2329;
+$defaultBg: #2D70F8;   // 042864 060606 1c67ea 0f5ada
+$chooseActiveColor: #2D70F8;
+$dangerColor: red;
+$warningColor: #ff9800;
+$successColor: #58c62f;
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  min-width: 1200px;
+}
+
+#app::-webkit-scrollbar-thumb,
+.reset__scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--background_clr-light-3);
+  border-radius: 8px;
+}
+
+#app::-webkit-scrollbar,
+.reset__scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+#app::-webkit-scrollbar-track,
+.reset__scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.el-menu {
+  border-right: none !important;
+}
+
+.small__title {
+  font-size: var(--font_size-title-small);
+  font-weight: 600;
+}
+.subtext {
+  color:var(--font_clr-gary__light--1)
+}
+
+.text__clr_primary {
+  color: var(--font_clr-high__light--primary)
+}
+
+.circle__point_primary::before, .circle__point_warning::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+}
+.circle__point_primary::before {
+  background: var(--font_clr-high__light--primary);
+}
+.circle__point_warning::before{
+  background:var(--background_clr-warn_01)
+}
